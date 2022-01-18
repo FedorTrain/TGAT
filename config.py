@@ -1,0 +1,2 @@
+FPS = 60
+TITLE = "TGAT"
