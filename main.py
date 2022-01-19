@@ -3,20 +3,16 @@ import math
 import pygame as pg
 from config import FPS, TITLE
 import sys
-from screeninfo import get_monitors
 import json
-from game import *
-
-W = get_monitors()[0].width
-H = get_monitors()[0].height
+from classes import *
+from resources import *
 
 pg.init()
 flags = pg.FULLSCREEN
 window = pg.display.set_mode((W, H), flags, vsync=1)
 pg.display.set_caption(TITLE)
 clock = pg.time.Clock()
-background_menu = pg.image.load("img/background_menu.jpg")
-background_menu = pg.transform.scale(background_menu, (W, H))
+
 
 x, y = 0, 0
 time = 0
@@ -26,6 +22,58 @@ backgrounds = []
 statics = []
 transports = []
 buttons = []
+
+
+def update_game():
+    f = False
+    if f:
+        menu(True)
+    for i in pg.event.get():
+        if i.type == pg.KEYDOWN:
+            if i.key == pg.K_ESCAPE:
+                menu(True)
+        if i.type == pg.MOUSEBUTTONDOWN:
+            for btn in buttons:
+                if i.pos[0] > btn.xy[0] and i.pos[1] > btn.xy[1]:
+                    if i.pos[0] < btn.xy[0] + btn.width and i.pos[1] < btn.xy[1] + btn.height:
+                        if btn.arg == 'non':
+                            btn.f()
+                        else:
+                            btn.f(btn.arg)
+
+
+def render_game():
+    window.blit(background_game, (0, 0))
+    for bg in backgrounds:
+        window.blit(background_img[bg.biome], bg.xy)
+
+
+gaming = False
+
+
+def game_exit():
+    global gaming
+    gaming = False
+    buttons.clear()
+    img = pg.image.load("img/newgame.jpg")
+    tempbtn = Button(400, 200, 424, 76, img, "default")
+    tempbtn.f = load_game
+    buttons.append(tempbtn)
+    img = pg.image.load("img/exit.jpg")
+    tempbtn = Button(400, 500, 323, 147, img, "non")
+    tempbtn.f = sys.exit
+    buttons.append(tempbtn)
+
+
+def game():
+    global gaming
+    buttons.clear()
+    gaming = True
+    while gaming:
+        clock.tick(FPS)
+        update_game()
+        render_game()
+        pg.display.update()
 
 
 def load_game(name):
@@ -45,6 +93,7 @@ def load_game(name):
     transports.clear()
     for i in loaded['transports']:
         transports.append(Transport(i['xy'][0], i['xy'][1], i["sprite"], i['tip']))
+    game()
 
 
 def save_game(name):
@@ -61,12 +110,12 @@ def save_game(name):
 
 def update_menu():
     global window, x, y, time
-    time += 1
-    x = math.sin(time/100) * 100
-    y = math.cos(time/100) * 100
+    time += 0.25
+    x = math.sin(time/(95*1)) * 500
+    y = math.cos(time/(100*1)) * 600
     for i in pg.event.get():
         if i.type == pg.KEYDOWN:
-            if i.key == pg.K_ESCAPE:
+            if i.key == pg.K_ESCAPE and not gaming:
                 sys.exit()
         if i.type == pg.MOUSEBUTTONDOWN:
             for btn in buttons:
@@ -78,30 +127,43 @@ def update_menu():
                             btn.f(btn.arg)
 
 
-def render_menu():
+def render_menu(in_game):
     global x, y
-    window.blit(background_menu, (0, 0))
+    if not in_game:
+        window.blit(background_menu, (0, 0))
     for btn in buttons:
         window.blit(btn.img, btn.xy)
-    #pg.draw.circle(window, (225, 225, 0), (300 + x, 300 + y), 30)
+    #pg.draw.circle(window, (225, 225, 0), (510 + x, 650 + y), 1)
 
 
-def menu():
-    buttons.clear()
-    img = pg.image.load("img/newgame.jpg")
-    tempbtn = Button(400, 200, 424, 76, img, "default")
-    tempbtn.f = load_game
-    buttons.append(tempbtn)
-    img = pg.image.load("img/exit.jpg")
-    tempbtn = Button(400, 500, 323, 147, img, "non")
-    tempbtn.f = sys.exit
-    buttons.append(tempbtn)
+def menu(in_game):
+    if in_game:
+        buttons.clear()
+        img = pg.image.load("img/exit.jpg")
+        tempbtn = Button(400, 500, 323, 147, img, "non")
+        tempbtn.f = game_exit
+        buttons.append(tempbtn)
+    else:
+        buttons.clear()
+        img = pg.image.load("img/newgame.jpg")
+        tempbtn = Button(400, 200, 424, 76, img, "default")
+        tempbtn.f = load_game
+        buttons.append(tempbtn)
+        img = pg.image.load("img/exit.jpg")
+        tempbtn = Button(400, 500, 323, 147, img, "non")
+        tempbtn.f = sys.exit
+        buttons.append(tempbtn)
 
-    while True:
+    while in_game == gaming:
         clock.tick(FPS)
         update_menu()
-        render_menu()
+        render_menu(in_game)
         pg.display.update()
+
+    print('END')
+
+
+is_test = True
 
 
 def test():
@@ -113,6 +175,7 @@ def test():
     save_game("default")
     load_game("default")
 
-menu()
+
+menu(False)
 
 

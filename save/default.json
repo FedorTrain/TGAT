@@ -39,14 +39,14 @@
         4,
         5
       ],
-      "biome": "water"
+      "biome": "grass"
     },
     {
       "xy": [
         13,
         2
       ],
-      "biome": "snow"
+      "biome": "grass"
     }
   ],
   "statics": [
