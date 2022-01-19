@@ -1,0 +1,86 @@
+{
+  "entities": [
+    {
+      "xy": [
+        1,
+        2
+      ],
+      "sprite": "sprite",
+      "speed": 30,
+      "backpack": [
+        1,
+        2,
+        3
+      ],
+      "backpack_size": 4,
+      "job": "non",
+      "need": "non"
+    },
+    {
+      "xy": [
+        1,
+        2
+      ],
+      "sprite": "sprite",
+      "speed": 20,
+      "backpack": [
+        3,
+        2,
+        1
+      ],
+      "backpack_size": 5,
+      "job": "non",
+      "need": "non"
+    }
+  ],
+  "backgrounds": [
+    {
+      "xy": [
+        4,
+        5
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        13,
+        2
+      ],
+      "biome": "snow"
+    }
+  ],
+  "statics": [
+    {
+      "xy": [
+        56,
+        34
+      ],
+      "sprite": "no.png"
+    },
+    {
+      "xy": [
+        36,
+        34
+      ],
+      "sprite": "no.png"
+    }
+  ],
+  "transports": [
+    {
+      "xy": [
+        34,
+        54
+      ],
+      "sprite": "no.png",
+      "tip": "car"
+    },
+    {
+      "xy": [
+        74,
+        34
+      ],
+      "sprite": "no.png",
+      "tip": "nocar"
+    }
+  ]
+}
