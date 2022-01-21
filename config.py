@@ -1,2 +1,3 @@
 FPS = 60
 TITLE = "TGAT"
+MAP_SPEED = 2

@@ -2,8 +2,8 @@
   "entities": [
     {
       "xy": [
-        1,
-        2
+        200,
+        200
       ],
       "sprite": "sprite",
       "speed": 30,
@@ -12,41 +12,488 @@
         2,
         3
       ],
-      "backpack_size": 4,
+      "backpack_size": 20,
       "job": "non",
-      "need": "non"
-    },
-    {
-      "xy": [
-        1,
-        2
-      ],
-      "sprite": "sprite",
-      "speed": 20,
-      "backpack": [
-        3,
-        2,
-        1
-      ],
-      "backpack_size": 5,
-      "job": "non",
-      "need": "non"
+      "need": "non",
+      "tip": "player"
     }
   ],
   "backgrounds": [
     {
       "xy": [
-        4,
-        5
+        864,
+        512
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        768,
+        192
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        736,
+        192
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        704,
+        192
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        672,
+        192
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        640,
+        192
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        640,
+        224
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        672,
+        224
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        768,
+        224
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        736,
+        224
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        768,
+        256
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        768,
+        288
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        768,
+        320
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        768,
+        352
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        768,
+        384
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        768,
+        416
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        768,
+        448
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        768,
+        480
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        768,
+        512
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        736,
+        512
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        672,
+        512
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        704,
+        512
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        640,
+        512
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        640,
+        480
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        640,
+        416
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        640,
+        448
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        640,
+        384
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        640,
+        352
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        640,
+        320
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        640,
+        288
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        640,
+        256
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        736,
+        480
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        672,
+        480
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        864,
+        352
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        448,
+        416
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        0,
+        0
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        32,
+        0
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        0,
+        32
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        32,
+        32
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        704,
+        224
       ],
       "biome": "grass"
     },
     {
       "xy": [
-        13,
-        2
+        704,
+        256
       ],
       "biome": "grass"
+    },
+    {
+      "xy": [
+        704,
+        288
+      ],
+      "biome": "grass"
+    },
+    {
+      "xy": [
+        704,
+        320
+      ],
+      "biome": "grass"
+    },
+    {
+      "xy": [
+        704,
+        352
+      ],
+      "biome": "grass"
+    },
+    {
+      "xy": [
+        704,
+        384
+      ],
+      "biome": "grass"
+    },
+    {
+      "xy": [
+        704,
+        416
+      ],
+      "biome": "grass"
+    },
+    {
+      "xy": [
+        704,
+        448
+      ],
+      "biome": "grass"
+    },
+    {
+      "xy": [
+        704,
+        480
+      ],
+      "biome": "grass"
+    },
+    {
+      "xy": [
+        736,
+        256
+      ],
+      "biome": "grass"
+    },
+    {
+      "xy": [
+        736,
+        288
+      ],
+      "biome": "grass"
+    },
+    {
+      "xy": [
+        736,
+        320
+      ],
+      "biome": "grass"
+    },
+    {
+      "xy": [
+        736,
+        352
+      ],
+      "biome": "grass"
+    },
+    {
+      "xy": [
+        736,
+        384
+      ],
+      "biome": "grass"
+    },
+    {
+      "xy": [
+        736,
+        416
+      ],
+      "biome": "grass"
+    },
+    {
+      "xy": [
+        736,
+        448
+      ],
+      "biome": "grass"
+    },
+    {
+      "xy": [
+        672,
+        448
+      ],
+      "biome": "grass"
+    },
+    {
+      "xy": [
+        672,
+        416
+      ],
+      "biome": "grass"
+    },
+    {
+      "xy": [
+        672,
+        384
+      ],
+      "biome": "grass"
+    },
+    {
+      "xy": [
+        672,
+        320
+      ],
+      "biome": "grass"
+    },
+    {
+      "xy": [
+        672,
+        288
+      ],
+      "biome": "grass"
+    },
+    {
+      "xy": [
+        672,
+        256
+      ],
+      "biome": "grass"
+    },
+    {
+      "xy": [
+        672,
+        352
+      ],
+      "biome": "grass"
+    },
+    {
+      "xy": [
+        896,
+        416
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        960,
+        320
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        928,
+        192
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        768,
+        128
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        544,
+        160
+      ],
+      "biome": "water"
+    },
+    {
+      "xy": [
+        480,
+        256
+      ],
+      "biome": "water"
     }
   ],
   "statics": [

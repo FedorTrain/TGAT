@@ -11,7 +11,7 @@ background_game = pg.image.load("img/background_game.jpg")
 background_game = pg.transform.scale(background_game, (W, H))
 
 background_img = {
-    "water": "img/water.jpg",
+    "water": pg.image.load("img/water.jpg"),
     "grass": pg.image.load("img/grass.jpg")
 }
 

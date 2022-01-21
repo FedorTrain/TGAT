@@ -1,6 +1,6 @@
 
 class Entity:
-    def __init__(self, x, y, sprite, speed, backpack, backpack_size, job, need):
+    def __init__(self, x, y, sprite, speed, backpack, backpack_size, job, need, tip):
         self.xy = (x, y)
         self.sprite = sprite
         self.speed = speed
@@ -8,6 +8,7 @@ class Entity:
         self.backpack_size = backpack_size
         self.job = job
         self.need = need
+        self.tip = tip
 
     def update(self):
         pass
